@@ -1,0 +1,16 @@
+# C++ build artifacts
+/build/
+cmake-build-*/
+*.o
+*.a
+*.so
+
+# Executable from CMakeLists.txt
+/main
+
+# Nix build results
+/result*
+
+# JetBrains IDE user-specific files
+.idea/workspace.xml
+.idea/shelf/
