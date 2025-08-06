@@ -1,0 +1,21 @@
+{
+    "name": "C++ Development Container",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": ".."
+    },
+    "settings": {
+        "C_Cpp.intelliSenseEngine": "Default",
+        "C_Cpp.errorSquiggles": "Enabled"
+    },
+    "extensions": [
+        "ms-vscode.cpptools",
+        "ms-vscode.cmake-tools",
+        "twxs.cmake",
+        "ms-vscode.cmake-tools",
+        "ms-vscode.cpptools-extension-pack",
+        "ms-vscode.vscode-typescript-tslint-plugin"
+    ],
+    "postCreateCommand": "sudo apt-get update && sudo apt-get install -y gcc g++ cmake ninja-build",
+    "remoteUser": "vscode"
+}
