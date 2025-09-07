@@ -1,4 +1,8 @@
-#include <bits/stdc++.h>
+#include <tuple>
+#include <vector>
+#include <iostream>
+#include <cstdint>
+#include <set>
 using namespace std;
 #define int long long
 
@@ -18,10 +22,12 @@ int32_t main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
     cout.tie(nullptr);
+#ifdef  DEBUG
+    freopen("../input.txt", "r", stdin);
+#endif
     int t;
     cin >> t;
     while (t--) {
         solve();
     }
 }
-
