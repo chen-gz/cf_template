@@ -1,21 +1,23 @@
 {
-    "name": "C++ Development Container",
+    "name": "Minimal C++ Development Container",
     "build": {
         "dockerfile": "Dockerfile",
         "context": ".."
     },
-    "settings": {
-        "C_Cpp.intelliSenseEngine": "Default",
-        "C_Cpp.errorSquiggles": "Enabled"
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "C_Cpp.intelliSenseEngine": "default",
+                "C_Cpp.errorSquiggles": "enabled"
+            },
+            "extensions": [
+                "ms-vscode.cpptools",
+                "ms-vscode.cmake-tools",
+                "ms-vscode.cpptools-extension-pack",
+                "twxs.cmake"
+            ]
+        }
     },
-    "extensions": [
-        "ms-vscode.cpptools",
-        "ms-vscode.cmake-tools",
-        "twxs.cmake",
-        "ms-vscode.cmake-tools",
-        "ms-vscode.cpptools-extension-pack",
-        "ms-vscode.vscode-typescript-tslint-plugin"
-    ],
-    "postCreateCommand": "sudo apt-get update && sudo apt-get install -y gcc g++ cmake ninja-build",
+    // The remoteUser ensures the container runs with the non-root vscode user.
     "remoteUser": "vscode"
 }
