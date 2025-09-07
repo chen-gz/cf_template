@@ -8,16 +8,16 @@
         "vscode": {
             "settings": {
                 "C_Cpp.intelliSenseEngine": "default",
-                "C_Cpp.errorSquiggles": "enabled"
+                "C_Cpp.errorSquiggles": "enabled",
+                "terminal.integrated.defaultProfile.linux": "fish"
             },
             "extensions": [
                 "ms-vscode.cpptools",
                 "ms-vscode.cmake-tools",
                 "ms-vscode.cpptools-extension-pack",
-                "twxs.cmake"
+                "vscodevim.vim"
             ]
         }
     },
-    // The remoteUser ensures the container runs with the non-root vscode user.
-    "remoteUser": "vscode"
+    // "remoteUser": "vscode"
 }
