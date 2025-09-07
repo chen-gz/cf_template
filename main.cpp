@@ -23,7 +23,7 @@ int32_t main() {
     cin.tie(nullptr);
     cout.tie(nullptr);
 #ifdef  DEBUG
-    freopen("../input.txt", "r", stdin);
+    freopen("./input.txt", "r", stdin);
 #endif
     int t;
     cin >> t;
