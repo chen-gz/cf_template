@@ -9,7 +9,6 @@
             "settings": {
                 "C_Cpp.intelliSenseEngine": "default",
                 "C_Cpp.errorSquiggles": "enabled",
-                "terminal.integrated.defaultProfile.linux": "fish"
             },
             "extensions": [
                 "ms-vscode.cpptools",
@@ -19,5 +18,5 @@
             ]
         }
     },
-    // "remoteUser": "vscode"
+    "remoteUser": "vscode"
 }

@@ -8,11 +8,16 @@ RUN apt-get update && apt-get install -y \
     git \
     sudo \
     gcc \
+    gdb \
     cmake \
     && rm -rf /var/lib/apt/lists/*
 
-# USER root
-# RUN chsh -s /usr/bin/fish vscode
 
-# Switch back to the non-root user for the rest of the build and runtime
-# USER vscode
+# 创建 vscode 用户
+RUN groupadd --gid 1000 vscode \
+    && useradd --uid 1000 --gid vscode --shell /bin/bash --create-home vscode \
+    && echo 'vscode ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
+
+# 切换到 vscode 用户
+USER vscode
+WORKDIR /home/vscode
