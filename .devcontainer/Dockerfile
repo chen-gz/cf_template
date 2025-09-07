@@ -9,11 +9,8 @@ RUN apk update && apk add --no-cache \
     git \
     ninja \
     fish \
-    git \
-    bash \
-    procps \
-    shadow \
-    coreutils
+    git
+
 
 # Add the vscode user with a home directory.
 # The user will have a non-root UID and GID.
@@ -22,9 +19,6 @@ RUN addgroup -S vscode && adduser -S -G vscode -u 1000 vscode
 # Set the working directory to /workspace and change its owner to the vscode user.
 WORKDIR /workspace
 RUN chown -R vscode:vscode /workspace
-
-# Set the user for subsequent commands to the `vscode` user.
-USER vscode
 
 # Configure the shell to use `fish` for interactive sessions.
 SHELL ["/usr/bin/fish", "-c"]
