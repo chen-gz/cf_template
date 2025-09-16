@@ -22,12 +22,16 @@ int32_t main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
     cout.tie(nullptr);
-#ifdef  DEBUG
+#ifdef DEBUG
     freopen("./input.txt", "r", stdin);
 #endif
     int t;
     cin >> t;
     while (t--) {
+#ifdef DEBUG
+        static int test_num = 1;
+        cout << "test case: " << test_num++ << endl;
+#endif
         solve();
     }
 }
