@@ -16,7 +16,7 @@
                 "ms-vscode.cpptools",
                 "ms-vscode.cpptools-extension-pack",
                 "vscodevim.vim",
-                "bazelbuild.vscode-bazel"
+                "BazelBuild.vscode-bazel"
             ]
         }
     },
