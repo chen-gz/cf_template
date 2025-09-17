@@ -5,7 +5,6 @@
         "context": ".."
     },
     "features": {
-        "ghcr.io/devcontainers-community/features/bazel:1": {}
     },
     "customizations": {
         "vscode": {
