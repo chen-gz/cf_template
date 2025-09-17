@@ -4,6 +4,9 @@
         "dockerfile": "Dockerfile",
         "context": ".."
     },
+    "features": {
+        "ghcr.io/devcontainers/features/bazel:1": {}
+    },
     "customizations": {
         "vscode": {
             "settings": {
@@ -12,9 +15,9 @@
             },
             "extensions": [
                 "ms-vscode.cpptools",
-                "ms-vscode.cmake-tools",
                 "ms-vscode.cpptools-extension-pack",
-                "vscodevim.vim"
+                "vscodevim.vim",
+                "bazelbuild.vscode-bazel"
             ]
         }
     },

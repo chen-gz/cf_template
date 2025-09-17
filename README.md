@@ -12,17 +12,23 @@ A brief description of your project.
 
 2. **Open the project in your development environment.**
 
-3. **Build the project:**
-   - Ensure you have Docker installed and running.
-   - Open the command palette and select "Remote-Containers: Reopen in Container".
-
-4. **Install dependencies:**
-   - The development container will automatically install GCC, G++, CMake, and Ninja.
+3. **Install Bazel:**
+   - Follow the official instructions to install Bazel on your system: https://bazel.build/install
 
 ## Usage
 
-- To run the project, navigate to the `src` directory and compile the `main.cpp` file using CMake or your preferred build system.
-- Execute the compiled binary to see the output.
+- To build the project, run the following command:
+  ```bash
+  bazel build //:main
+  ```
+- To run the project, run the following command:
+  ```bash
+  bazel run //:main
+  ```
+- To run the compiled binary, run the following command:
+  ```bash
+  ./bazel-bin/main
+  ```
 
 
 ## License

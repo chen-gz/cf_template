@@ -9,7 +9,6 @@ RUN apt-get update && apt-get install -y \
     sudo \
     gcc \
     gdb \
-    cmake \
     && rm -rf /var/lib/apt/lists/*
 
 
