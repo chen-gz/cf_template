@@ -11,6 +11,15 @@ RUN apt-get update && apt-get install -y \
     gdb \
     && rm -rf /var/lib/apt/lists/*
 
+# Install Bazel
+RUN apt-get update && apt-get install -y gnupg && \
+    curl -fsSL https://bazel.build/bazel-release.pub.gpg | gpg --dearmor -o /usr/share/keyrings/bazel-archive-keyring.gpg && \
+    echo "deb [arch=amd64 signed-by=/usr/share/keyrings/bazel-archive-keyring.gpg] http://storage.googleapis.com/bazel-apt stable jdk1.8" > /etc/apt/sources.list.d/bazel.list && \
+    apt-get update && \
+    apt-get install -y bazel && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
 
 # 创建 vscode 用户
 RUN groupadd --gid 1000 vscode \
