@@ -14,3 +14,4 @@ cmake-build-*/
 # JetBrains IDE user-specific files
 .idea/workspace.xml
 .idea/shelf/
+.idea/editor.xml
