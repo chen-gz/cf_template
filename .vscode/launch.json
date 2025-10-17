@@ -5,7 +5,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "C++ Debug",
+            "name": "Debug (lldb)",
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/build/main",
@@ -14,8 +14,7 @@
             "cwd": "${workspaceFolder}",
             "environment": [],
             "externalConsole": false,
-            "MIMode": "gdb",
-            "miDebuggerPath": "/usr/bin/gdb",
+            "MIMode": "lldb",
             "preLaunchTask": "build"
         }
     ]
