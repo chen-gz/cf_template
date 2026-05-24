@@ -15,3 +15,8 @@ cmake-build-*/
 .idea/workspace.xml
 .idea/shelf/
 .idea/editor.xml
+.zig-cache/
+zig-out/
+.antigravitycli/
+.DS_Store
+

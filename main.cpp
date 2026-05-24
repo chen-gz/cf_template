@@ -19,16 +19,15 @@
 using namespace std;
 
 void solve() {
-
 }
 
 int32_t main() {
     std::ios::sync_with_stdio(false);
     std::cin.tie(nullptr);
     std::cout.tie(nullptr);
-    #ifdef DEBUG
-        freopen("./input.txt", "r", stdin);
-    #endif
+#ifdef DEBUG
+    freopen("./input.txt", "r", stdin);
+#endif
     int t;
     std::cin >> t;
     while (t--) {

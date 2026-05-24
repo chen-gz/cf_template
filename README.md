@@ -12,17 +12,21 @@ A brief description of your project.
 
 2. **Open the project in your development environment.**
 
-3. **Build the project:**
-   - Ensure you have Docker installed and running.
-   - Open the command palette and select "Remote-Containers: Reopen in Container".
-
-4. **Install dependencies:**
-   - The development container will automatically install GCC, G++, CMake, and Ninja.
+3. **Build and Run with Zig:**
+   - Ensure you have Zig installed (version 0.16.0 or later).
+   - Build the project:
+     ```bash
+     zig build
+     ```
+   - Run the project:
+     ```bash
+     zig build run
+     ```
 
 ## Usage
 
-- To run the project, navigate to the `src` directory and compile the `main.cpp` file using CMake or your preferred build system.
-- Execute the compiled binary to see the output.
+- The project uses `build.zig` to manage the C++ build process.
+- In debug mode, the program automatically reads from `input.txt`.
 
 
 ## License

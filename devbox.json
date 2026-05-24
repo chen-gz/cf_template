@@ -1,14 +1,15 @@
 {
   "packages": [
     "cmake@latest",
-    "clang-tools@latest"
+    "clang-tools@latest",
+    "zig@latest"
   ],
   "shell": {
     "init_hook": [
       "echo 'Welcome to the devbox shell!'"
     ],
     "scripts": {
-      "run": "cmake -B build -S . && cmake --build build && ./build/main"
+      "run": "zig build run"
     }
   }
 }
