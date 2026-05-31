@@ -1,0 +1,7 @@
+[
+  {
+    "directory": "/Users/guangzong/Documents/cf_template",
+    "command": "zig c++ -std=c++20 -DDEBUG -c main.cpp",
+    "file": "main.cpp"
+  }
+]

@@ -1,0 +1,101 @@
+#include <algorithm>
+#include <bit>
+#include <bitset>
+#include <climits>
+#include <cmath>
+#include <cstdint>
+#include <cstdio>
+#include <iostream>
+#include <map>
+#include <numeric>
+#include <queue>
+#include <set>
+#include <string>
+#include <tuple>
+#include <vector>
+// #define mod 1000000007
+#define int long long
+
+#define N 100006
+#define mod 998244353
+using namespace std;
+void solve() {
+    int n, x, y;
+    cin >> n >> x >> y;
+    vector<int> v(n);
+    for (auto &val : v) cin >> val;  // 避免变量遮蔽，这里改为 val
+
+    vector<int> in;
+    vector<int> out;
+    for (int i = 0; i < n; i++) {
+        // 错误1修复：这里应该是 i < x 而不是 i <= x
+        if (i < x || i >= y) {
+            out.push_back(v[i]);
+        } else {
+            in.push_back(v[i]);
+        }
+    }
+
+    if (in.size() == 0) {
+        for (auto &val : out) {
+            cout << val << " ";
+        }
+        cout << "\n";
+        return;
+    }
+
+    int min_v_idx = 0;
+    for (int i = 0; i < in.size(); i++) {
+        // 错误2修复：比较的应该是 in 数组的元素，而不是 v
+        if (in[min_v_idx] > in[i]) {
+            min_v_idx = i;
+        }
+    }
+
+    vector<int> in2(in.size());
+    for (int i = 0; i < in.size(); i++) {
+        in2[i] = in[(i + min_v_idx) % in.size()];
+    }
+
+    int tmp_index = out.size();
+    // 找到 out 中第一个大于 in2[0] 的位置
+    for (int i = 0; i < out.size(); i++) {
+        if (out[i] > in2[0]) {
+            tmp_index = i;
+            break;
+        }
+    }
+
+    // 输出前半部分 out
+    for (int i = 0; i < tmp_index; i++) {
+        cout << out[i] << " ";
+    }
+    // 输出内部元素 in2
+    for (auto &val : in2) {
+        cout << val << " ";
+    }
+    // 错误3修复：漏掉了输出 out 数组的后半部分
+    for (int i = tmp_index; i < out.size(); i++) {
+        cout << out[i] << " ";
+    }
+    cout << "\n";
+}
+
+int32_t main() {
+    std::ios::sync_with_stdio(false);
+    std::cin.tie(nullptr);
+    std::cout.tie(nullptr);
+#ifdef DEBUG
+    freopen("./input.txt", "r", stdin);
+#endif
+    int t;
+    std::cin >> t;
+    while (t--) {
+#ifdef DEBUG
+        static int test_num = 1;
+        std::cout << "test case: " << test_num++ << std::endl;
+#endif
+        solve();
+    }
+    return 0;
+}

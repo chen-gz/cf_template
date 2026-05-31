@@ -1,0 +1,74 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+// 发送查询并计算特征值 E = k - v
+int ask(const vector<int>& S) {
+    if (S.empty()) return 0;
+    cout << "? " << S.size() << " ";
+    for (int x : S) {
+        cout << x << " ";
+    }
+    cout << endl;
+
+    int v;
+    cin >> v;
+    if (v == -1) exit(0); // 防御性退出
+
+    return S.size() - v;
+}
+
+void solve() {
+    int n;
+    cin >> n;
+
+    // 通用二分查找函数
+    // limit: 二分上限
+    // known: 已经确定的右侧目标元素
+    auto find_target = [&](int limit, vector<int> known) {
+        int low = 1, high = limit;
+        while (low < high) {
+            int mid = low + (high - low) / 2;
+
+            // 构造查询集合: [1 ... mid] 加上已知的目标元素
+            vector<int> S;
+            for (int i = 1; i <= mid; i++) S.push_back(i);
+            for (int t : known) S.push_back(t);
+
+            int E = ask(S);
+
+            // 如果 E 是奇数，说明当前集合凑齐了 3 个目标
+            if (E % 2 == 1) {
+                high = mid; // 目标在左边（含 mid）
+            } else {
+                low = mid + 1; // 目标在右边
+            }
+        }
+        return low;
+    };
+
+    // 第一步：找最右边的目标 z
+    int z = find_target(2 * n + 1, {});
+
+    // 第二步：找中间的目标 y (它肯定在 z 的左边)
+    int y = find_target(z - 1, {z});
+
+    // 第三步：找最左边的目标 x (它肯定在 y 的左边)
+    int x = find_target(y - 1, {y, z});
+
+    // 输出最终答案
+    cout << "! " << x << " " << y << " " << z << endl;
+}
+
+int32_t main() {
+    std::ios::sync_with_stdio(false);
+    std::cin.tie(nullptr);
+    int t;
+    if (std::cin >> t) {
+        while (t--) {
+            solve();
+        }
+    }
+    return 0;
+}

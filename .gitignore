@@ -15,8 +15,25 @@ cmake-build-*/
 .idea/workspace.xml
 .idea/shelf/
 .idea/editor.xml
+
+# Zig cache
 .zig-cache/
 zig-out/
+a.out
+main_zig_test
+
+# Antigravity & cache
 .antigravitycli/
+.cache/
 .DS_Store
 
+# Devenv
+.devenv*
+devenv.local.nix
+devenv.local.yaml
+
+# direnv
+.direnv
+
+# pre-commit
+.pre-commit-config.yaml
