@@ -20,7 +20,7 @@ pub fn build(b: *std.Build) void {
 
     exe.root_module.addCSourceFile(.{
         .file = b.path("main.cpp"),
-        .flags = &.{ "-std=c++20", "-Wall", "-Wextra" },
+        .flags = &.{ "-std=c++23", "-Wall", "-Wextra" },
     });
 
     if (optimize == .Debug) {

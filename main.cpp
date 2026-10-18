@@ -3,35 +3,40 @@
 #include <bitset>
 #include <climits>
 #include <cmath>
+#include <cstddef>
 #include <cstdint>
 #include <cstdio>
+#include <deque>
+#include <functional>
+#include <ios>
 #include <iostream>
+#include <iterator>
 #include <map>
 #include <numeric>
 #include <queue>
 #include <set>
-#include <string>
 #include <tuple>
 #include <vector>
 
-// #define mod 1000000007
+#define mod 1000000007
 #define int long long
 #define N 100006
-#define mod 998244353
+// #define mod 998244353
 using namespace std;
 
 void solve() {
-    int n;
-    cin >> n;
-
-    int sum = 1;
-    int cur = 1;
-    for (int i = 0; i < n; i++) {
-        cout << cur << " ";
-        cur += sum;
-        sum += cur;
+    int a, b;
+    cin >> a >> b;
+    if (a <= b) {
+        cout << -1 << endl;
     }
-    cout << endl;
+    else if (a <= 2*b) {
+        cout << a - b <<endl;
+    }
+    else {
+        cout << b <<endl;
+    }
+
 }
 
 int32_t main() {
